@@ -16,27 +16,18 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
+
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "bookingReview")
-public class Review {
-    @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Review extends Base{
+
 
     @Column(nullable = false)
-    private String content;
+    protected String content;
 
     @Column(nullable = false)
-    private double rating;
+    protected double rating;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate
-    private Date createdAt;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate
-    private Date updatedAt;
 }

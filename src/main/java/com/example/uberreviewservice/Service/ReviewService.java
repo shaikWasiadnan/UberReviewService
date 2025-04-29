@@ -6,6 +6,8 @@ import lombok.Builder;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ReviewService implements CommandLineRunner {
     private ReviewRepository reviewRepository;
@@ -20,5 +22,10 @@ public class ReviewService implements CommandLineRunner {
         Review r= Review.builder().content("Amazing content from addy").rating(5.0).build();
         System.out.println(r);
         reviewRepository.save(r);
+
+        List<Review> reviews=reviewRepository.findAll();
+        for(Review review:reviews){
+            System.out.println(r.getContent());
+        }
     }
 }
