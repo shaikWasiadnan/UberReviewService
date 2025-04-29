@@ -1,6 +1,7 @@
 package com.example.uberreviewservice.Service;
 
 import com.example.uberreviewservice.Repository.ReviewRepository;
+import com.example.uberreviewservice.models.Booking;
 import com.example.uberreviewservice.models.Review;
 import lombok.Builder;
 import org.springframework.boot.CommandLineRunner;
@@ -27,5 +28,7 @@ public class ReviewService implements CommandLineRunner {
         for(Review review:reviews){
             System.out.println(r.getContent());
         }
+
+
     }
 }

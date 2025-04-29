@@ -9,5 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PassengerReview extends Review{
-    private String passengerReview;
+    private String passengerReviewContent;
+    private double rating;
 }
